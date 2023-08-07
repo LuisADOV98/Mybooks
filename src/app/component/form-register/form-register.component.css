@@ -1,0 +1,88 @@
+.abuelo{
+    height: 100vhs;
+    background-image: url(../../../assets/imagenes/fondoform1.webp);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+}
+.Formulario{
+    height: 800px;
+    width: 40%;
+    border-radius: 20px solid #fafafa10;
+    backdrop-filter: blur(0.1rem);
+    background-color: #fafafa10;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.aviso h1{
+    color: black;
+}
+input{
+    color: black;
+    background-color: white; 
+    width: 408px;
+    height: 30px; 
+    border-radius: 5px;
+    margin-top: 10px;
+    padding-left: 10px;
+    margin-bottom: 20px; 
+}
+textarea{
+    color: black;
+    background-color: white; 
+    width: 408px; 
+    height: 40px; 
+    border-radius: 5px;
+    margin-top: 10px;
+    padding-left: 10px;
+    margin-bottom: 20px; 
+    padding-top: 15px; 
+}
+label{
+    display: block; 
+    float: center;
+    color: white;
+}
+.button{
+    height: 45px; 
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 20px; 
+    margin-top: 10px;
+    background-color: rgb(0, 0, 0); 
+    border-radius: 10px;
+    width: 420px;
+    color: white;
+}
+.button:active{
+    background-color: #ffd900;
+  color: rgb(0, 0, 0);
+}
+.button p{
+    color: white; 
+}
+.aviso{
+    font-size: 13px;
+    color: rgb(255, 255, 255);
+}
+h1{
+    font-size: 39px;
+    text-align: letf; 
+    padding-bottom: 20px; 
+    color: white;
+}
+h3{
+    font-size: 16px; 
+    padding-bottom: 30px;
+    color: rgb(0, 0, 0);
+}
+p{
+    font-size: 14px; 
+    color: rgb(0, 0, 0); 
+}

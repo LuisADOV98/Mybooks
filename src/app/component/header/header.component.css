@@ -1,0 +1,17 @@
+.barra{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--color1);
+    height: 70px;
+}
+.menu{
+color: var(--color3);
+}
+.home{
+    color: var(--color4);
+}
+.register{
+    color: var(--color2);
+}

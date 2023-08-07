@@ -1,0 +1,66 @@
+
+<div class="abuelo">
+<div class="Formulario" id="contacto">
+                
+    		
+        <h1>Contactanos</h1>
+            <h3>¡Esperamos por ti!</h3>
+
+            <form action="submeter-formulario.php" method="post">				
+
+                <p>
+                <label for="nombre" class="colocar_nombre">Nombre
+                    <span class="obligatorio">*</span>
+                </label>
+                    <input type="text" name="introducir_nombre" id="nombre" required="obligatorio" placeholder="Escribe tu nombre.">
+                </p>
+                
+
+                <p>
+                    <label for="apellido" class="colocar_apellido">Apellido
+                        <span class="obligatorio">*</span>
+                    </label>
+                        <input type="text" name="introducir_apellido" id="apellido" required="obligatorio" placeholder="Escribe tu apellido.">
+                    </p>
+
+                <p>
+                <label for="Email" class="colocar_Email">Email
+                    <span class="obligatorio">*</span>
+                </label>
+                    <input type="origen" name="introducir_email" id="email" required="obligatorio" placeholder="Escribe tu email.">
+                </p>
+                
+
+                <p>
+                    <label for="url" class="colocar_url">Url
+                        <span class="obligatorio">*</span>
+                    </label>
+                        <input type="text" name="introducir_Url" id="url" required="obligatorio" placeholder="Escribe tu url.">
+                    </p>
+
+
+                     <p>
+                    <label for="contraseña" class="colocar_contraseña">Contraseña
+                        <span class="obligatorio">*</span>
+                    </label>
+                        <input type="text" name="introducir_contraseña" id="contraseña" required="obligatorio" placeholder="Contraseña">
+                    </p>
+
+                    <p>
+                        <label for="contraseña2" class="colocar_contraseña2">Contraseña
+                            <span class="obligatorio">*</span>
+                        </label>
+                            <input type="text" name="introducir_contraseña2" id="contraseña2" required="obligatorio" placeholder="Repetir Contraseña">
+                        </p>
+
+
+                <input type="button" value="enviar" class="button" onclick="recogerInfo()">
+                    
+                <p class="aviso">
+                    <span class="obligatorio"> * </span>los campos son obligatorios.
+                </p>					
+                    
+        </form>
+    
+</div>
+</div>
