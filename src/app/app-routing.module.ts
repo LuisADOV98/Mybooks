@@ -5,6 +5,7 @@ import { FooterComponent } from './component/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { FormRegisterComponent } from './component/form-register/form-register.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 const routes: Routes = [
   {path: "", redirectTo:"home", pathMatch:'full'},
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path: "home", component: HomeComponent}, 
   {path: "form-register", component: FormRegisterComponent},
   {path: "register", component: RegisterComponent},
+  {path: "profile", component: ProfileComponent}
   
   
 ];

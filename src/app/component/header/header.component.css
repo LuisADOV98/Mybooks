@@ -15,3 +15,6 @@ color: var(--color3);
 .register{
     color: var(--color2);
 }
+.profile{
+    color: grey
+}
