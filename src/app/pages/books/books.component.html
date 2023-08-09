@@ -1,0 +1,96 @@
+<!-- <div class="libros"> -->
+  <ng-template>
+    <div class="card" *ngFor="let libro of books">
+  <img src="{{libro.photo}}" alt=""/>
+    <h5 class="cardtitle">{{libro.title}}</h5>
+      <div class="cardtext">
+        <p>El author es: {{libro.author}}</p>
+        <p>Su tapa es: {{libro.type}}</p>
+        <p>su precio es: {{libro.price}}€</p>
+        <p>id: {{libro.id_book}}</p>
+        <p>user id: {{libro.id_user}}</p>
+      </div>
+      <button class=bttn>Comprar</button>
+    </div>
+  </ng-template>
+
+
+<div class="libros">
+
+
+
+  <div class="card">
+    <img src="{{books[1].photo}}" alt=""/>
+  
+      <h5 class="cardtitle">{{books[1].title}}</h5>
+      <div class="cardtext">
+        <p>El author es: {{books[1].author}}</p>
+        <p>Su tapa es: {{books[1].type}}</p>
+        <p>su precio es: {{books[1].price}}€</p>
+        <p>id: {{books[1].id_book}}</p>
+        <p>user id: {{books[1].id_user}}</p>
+      </div>
+      <button class=bttn>Comprar</button>
+    </div>
+
+    <div class="card">
+      <img src="{{books[2].photo}}" alt=""/>
+    
+        <h5 class="cardtitle">{{books[2].title}}</h5>
+        <div class="cardtext">
+          <p>El author es: {{books[2].author}}</p>
+          <p>Su tapa es: {{books[2].type}}</p>
+          <p>su precio es: {{books[2].price}}€</p>
+          <p>id: {{books[2].id_book}}</p>
+          <p>user id: {{books[2].id_user}}</p>
+        </div>
+        <button class=bttn>Comprar</button>
+      </div>
+
+      <div class="card">
+        <img src="{{books[3].photo}}" alt=""/>
+      
+          <h5 class="cardtitle">{{books[3].title}}</h5>
+          <div class="cardtext">
+            <p>El author es: {{books[3].author}}</p>
+            <p>Su tapa es: {{books[3].type}}</p>
+            <p>su precio es: {{books[3].price}}€</p>
+            <p>id: {{books[3].id_book}}</p>
+            <p>user id: {{books[3].id_user}}</p>
+          </div>
+          <button class=bttn>Comprar</button>
+        </div>
+
+
+        <div class="card">
+          <img src="{{books[4].photo}}" alt=""/>
+        
+            <h5 class="cardtitle">{{books[4].title}}</h5>
+            <div class="cardtext">
+              <p>El author es: {{books[4].author}}</p>
+              <p>Su tapa es: {{books[4].type}}</p>
+              <p>su precio es: {{books[4].price}}€</p>
+              <p>id: {{books[4].id_book}}</p>
+              <p>user id: {{books[4].id_user}}</p>
+            </div>
+            <button class=bttn>Comprar</button>
+          </div>
+  
+
+          <div class="card">
+            <img src="{{books[5].photo}}" alt=""/>
+          
+              <h5 class="cardtitle">{{books[5].title}}</h5>
+              <div class="cardtext">
+                <p>El author es: {{books[5].author}}</p>
+                <p>Su tapa es: {{books[5].type}}</p>
+                <p>su precio es: {{books[5].price}}€</p>
+                <p>id: {{books[5].id_book}}</p>
+                <p>user id: {{books[5].id_user}}</p>
+              </div>
+              <button class=bttn>Comprar</button>
+            </div>
+    
+
+
+</div>
