@@ -1,6 +1,7 @@
 .foot{
     background-color: var(--color3);
-    height: 100px;
+    
+    height: 10vh;
     display: flex;
     justify-content: space-around;
     align-items: center;

@@ -1,96 +1,66 @@
-<!-- <div class="libros"> -->
-  <ng-template>
-    <div class="card" *ngFor="let libro of books">
+<div class="libros">
+
+    <div class="card" *ngFor="let libro of books; let even = even">
+      <div class="if" *ngIf="books.lengthas === 0">
+  ¡No hay libros!
+</div>
   <img src="{{libro.photo}}" alt=""/>
     <h5 class="cardtitle">{{libro.title}}</h5>
       <div class="cardtext">
         <p>El author es: {{libro.author}}</p>
         <p>Su tapa es: {{libro.type}}</p>
         <p>su precio es: {{libro.price}}€</p>
-        <p>id: {{libro.id_book}}</p>
-        <p>user id: {{libro.id_user}}</p>
-      </div>
-      <button class=bttn>Comprar</button>
-    </div>
-  </ng-template>
-
-
-<div class="libros">
-
-
-
-  <div class="card">
-    <img src="{{books[1].photo}}" alt=""/>
-  
-      <h5 class="cardtitle">{{books[1].title}}</h5>
-      <div class="cardtext">
-        <p>El author es: {{books[1].author}}</p>
-        <p>Su tapa es: {{books[1].type}}</p>
-        <p>su precio es: {{books[1].price}}€</p>
-        <p>id: {{books[1].id_book}}</p>
-        <p>user id: {{books[1].id_user}}</p>
-      </div>
-      <button class=bttn>Comprar</button>
-    </div>
-
-    <div class="card">
-      <img src="{{books[2].photo}}" alt=""/>
-    
-        <h5 class="cardtitle">{{books[2].title}}</h5>
-        <div class="cardtext">
-          <p>El author es: {{books[2].author}}</p>
-          <p>Su tapa es: {{books[2].type}}</p>
-          <p>su precio es: {{books[2].price}}€</p>
-          <p>id: {{books[2].id_book}}</p>
-          <p>user id: {{books[2].id_user}}</p>
-        </div>
-        <button class=bttn>Comprar</button>
-      </div>
-
-      <div class="card">
-        <img src="{{books[3].photo}}" alt=""/>
-      
-          <h5 class="cardtitle">{{books[3].title}}</h5>
-          <div class="cardtext">
-            <p>El author es: {{books[3].author}}</p>
-            <p>Su tapa es: {{books[3].type}}</p>
-            <p>su precio es: {{books[3].price}}€</p>
-            <p>id: {{books[3].id_book}}</p>
-            <p>user id: {{books[3].id_user}}</p>
-          </div>
-          <button class=bttn>Comprar</button>
-        </div>
-
-
-        <div class="card">
-          <img src="{{books[4].photo}}" alt=""/>
+        <div>{{libro | ref}}</div>
         
-            <h5 class="cardtitle">{{books[4].title}}</h5>
-            <div class="cardtext">
-              <p>El author es: {{books[4].author}}</p>
-              <p>Su tapa es: {{books[4].type}}</p>
-              <p>su precio es: {{books[4].price}}€</p>
-              <p>id: {{books[4].id_book}}</p>
-              <p>user id: {{books[4].id_user}}</p>
-            </div>
-            <button class=bttn>Comprar</button>
-          </div>
+        <div class="extra">
+        <button [ngClass]="even ? 'color1' : 'color2' " >Comprar</button>
+      </div>
+      </div>
+      
+    </div>
   
+<!-- 
+    <div class="hijo2">
+      <h1 class="titulo"> Añadir libro </h1>
 
-          <div class="card">
-            <img src="{{books[5].photo}}" alt=""/>
+      <div class="formulario2">
           
-              <h5 class="cardtitle">{{books[5].title}}</h5>
-              <div class="cardtext">
-                <p>El author es: {{books[5].author}}</p>
-                <p>Su tapa es: {{books[5].type}}</p>
-                <p>su precio es: {{books[5].price}}€</p>
-                <p>id: {{books[5].id_book}}</p>
-                <p>user id: {{books[5].id_user}}</p>
-              </div>
-              <button class=bttn>Comprar</button>
-            </div>
-    
+          <form action="">
+              <p>
+                  <input type="text" #imagen1>
+                  
+              </p>
 
+              <p>
+                      <input type="text" #title1>
+              </p>
+
+              <p>
+                     <input type="text" #author1> 
+              </p>
+
+              <p>
+                      <input type="text" #type1>
+              </p>
+
+              <p>
+                      <input type="text" #price1>
+              </p>
+              
+              <p>
+                      <input type="text" #id_book1>
+              </p>
+
+              <p>
+                      <input type="text" #id_user1>
+              </p>
+
+              <button (click)=añadirLibro(imagen1,title1,author1,type1,price1,id_book1,id_user1)>Añadir</button>
+          </form>
+      </div>
+
+  </div>
 
 </div>
+
+ -->

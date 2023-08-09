@@ -96,6 +96,10 @@
     }
   },
   "cli": {
+<<<<<<< HEAD
     "analytics": "0e9619cb-7587-472d-8445-371d62dd487d"
+=======
+    "analytics": "f4a2b036-a16b-4434-8bef-e174aa041a6a"
+>>>>>>> dia3
   }
 }
