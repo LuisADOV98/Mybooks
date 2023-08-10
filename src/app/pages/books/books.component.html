@@ -1,66 +1,66 @@
 <div class="libros">
-
-    <div class="card" *ngFor="let libro of books; let even = even">
-      <div class="if" *ngIf="books.lengthas === 0">
-  ¡No hay libros!
-</div>
-  <img src="{{libro.photo}}" alt=""/>
-    <h5 class="cardtitle">{{libro.title}}</h5>
-      <div class="cardtext">
-        <p>El author es: {{libro.author}}</p>
-        <p>Su tapa es: {{libro.type}}</p>
-        <p>su precio es: {{libro.price}}€</p>
-        <div>{{libro | ref}}</div>
-        
-        <div class="extra">
-        <button [ngClass]="even ? 'color1' : 'color2' " >Comprar</button>
-      </div>
-      </div>
-      
+<div class="if" *ngIf="books.length === 0">
+      ¡No hay libros!
     </div>
-  
-<!-- 
-    <div class="hijo2">
+  <div class="card" *ngFor="let libro of books; let even = even">
+    
+    <img src="{{libro.photo}}" />
+    <h5 class="cardtitle">{{libro.title}}</h5>
+    <div class="cardtext">
+      <p>El author es: {{libro.author}}</p>
+      <p>Su tapa es: {{libro.type}}</p>
+      <p>su precio es: {{libro.price}}€</p>
+      <div>{{libro | ref}}</div>
+      <div>{{libro.id_user}}</div>
+
+      <div class="extra">
+        <button [ngClass]="even ? 'color1' : 'color2' ">Comprar</button>
+      </div>
+    </div>
+
+  </div>
+  <!-- ------------------------------------------------ -->
+
+  <!-- ------------------------------------------- -->
+   <div class="hijo2">
       <h1 class="titulo"> Añadir libro </h1>
 
       <div class="formulario2">
           
           <form action="">
               <p>
-                  <input type="text" #imagen1>
+                  <input type="text" value="photo" #imagen1>
                   
               </p>
 
               <p>
-                      <input type="text" #title1>
+                      <input type="text" value="title" #title1>
               </p>
 
               <p>
-                     <input type="text" #author1> 
+                     <input type="text" value="author" #author1> 
               </p>
 
               <p>
-                      <input type="text" #type1>
+                      <input type="text" value="type" #type1>
               </p>
 
               <p>
-                      <input type="text" #price1>
+                      <input type="text" value="price" #price1>
               </p>
               
               <p>
-                      <input type="text" #id_book1>
+                      <input type="text" value="id book" #id_book1>
               </p>
 
               <p>
-                      <input type="text" #id_user1>
+                <input type="text" value="id user" #id_user1>
               </p>
 
-              <button (click)=añadirLibro(imagen1,title1,author1,type1,price1,id_book1,id_user1)>Añadir</button>
+              <button on-click="anyadirLibro(id_book1.value,id_user1.value,title1.value,type1.value,author1.value,price1.value,imagen1.value)">Añadir</button>
           </form>
       </div>
 
   </div>
 
 </div>
-
- -->
