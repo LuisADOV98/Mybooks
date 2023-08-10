@@ -8,9 +8,9 @@ import { Books } from 'src/app/models/books';
 })
 export class BooksComponent {
     public books: Books[];
-    public book: Books
+    
   constructor(){
-    this.book
+   
     this.books = [
       new Books(2001,1001,"El guardian entre el centeno", "Blanda", "J.D. Salinger", 12, "https://vignette.wikia.nocookie.net/biblioteca-virtual-de-literatura/images/0/08/El_guardi%C3%A1n_entre_el_centeno.jpg/revision/latest?cb=20140527040459&path-prefix=es" ),
       new Books(2000,1000,"Inferno", "Dura","Dan Brown", 23,"https://th.bing.com/th/id/OIP.pYJZxM3jJ0QLMRdVejY8KQHaLP?pid=ImgDet&rs=1"),
@@ -20,13 +20,8 @@ export class BooksComponent {
       new Books(4268,9431, "Onyx", "Blanda","Jennifer L. Armentrout", 16, "https://th.bing.com/th/id/OIP.JTxB0P_rceyKKi9XwrABzQHaLq?pid=ImgDet&rs=1" )
     ]
   }
-  añadirLibro(newIDBook:HTMLInputElement, newIDUser:HTMLInputElement, newTitle:HTMLInputElement,newType:HTMLInputElement,newAuthor:HTMLInputElement,newPrice:HTMLInputElement,newPhoto:HTMLInputElement){
-    this.book.id_book = newIDBook.valueAsNumber;
-    this.book.id_user = newIDUser.valueAsNumber;
-    this.book.title = newTitle.value;
-    this.book.type = newType.value;
-    this.book.author = newAuthor.value;
-    this.book.price = newPrice.valueAsNumber;
-    this.book.photo = newPhoto.value;
+ public anyadirLibro(id_book:number,id_user:number,title:string,type:string,author:string,price:number,photo:string,){
+   let newbook = new Books(id_book,id_user,title,type,author,price,photo)
+  this.books.push(newbook)
   }
 }
