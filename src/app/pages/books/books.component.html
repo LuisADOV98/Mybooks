@@ -1,66 +1,54 @@
 <div class="libros">
-<div class="if" *ngIf="books.length === 0">
-      ¡No hay libros!
-    </div>
-  <div class="card" *ngFor="let libro of books; let even = even">
-    
-    <img src="{{libro.photo}}" />
-    <h5 class="cardtitle">{{libro.title}}</h5>
-    <div class="cardtext">
-      <p>El author es: {{libro.author}}</p>
-      <p>Su tapa es: {{libro.type}}</p>
-      <p>su precio es: {{libro.price}}€</p>
-      <div>{{libro | ref}}</div>
-      <div>{{libro.id_user}}</div>
-
-      <div class="extra">
-        <button [ngClass]="even ? 'color1' : 'color2' ">Comprar</button>
-      </div>
-    </div>
-
-  </div>
+         <div class="if" *ngIf="books.length === 0">
+          ¡No hay libros!
+        </div> 
+<app-card class="app-card" *ngFor="let libro of books; let even = even" [libro]="libro" [even]="even" [books]="books" (bookDeleted)="deleteBook($event)"></app-card>
   <!-- ------------------------------------------------ -->
 
   <!-- ------------------------------------------- -->
-   <div class="hijo2">
-      <h1 class="titulo"> Añadir libro </h1>
+   
+  <form class="form">
+        <p class="title">Añade un nuevo libro </p>
+        <p class="message">¡ Asi todos podremos disfrutar de el ! </p>
+            <div class="flex">
+            <label>
+                <input required="" placeholder="" type="text" class="input" #imagen1>
+                <span>Portada</span>
+            </label>
+    
+            <label>
+                <input required="" placeholder="" type="text" class="input" #title1>
+                <span>Titulo</span>
+            </label>
+        </div>  
+                
+        <label>
+            <input required="" placeholder="" type="text" class="input" #author1>
+            <span>Author</span>
+        </label> 
+            
+        <label>
+            <input required="" placeholder="" type="text" class="input" #type1>
+            <span>Tipo de tapa</span>
+        </label>
+        <label>
+            <input required="" placeholder="" type="number" class="input" #price1>
+            <span>Precio</span>
+        </label>
 
-      <div class="formulario2">
-          
-          <form action="">
-              <p>
-                  <input type="text" value="photo" #imagen1>
-                  
-              </p>
+        <label>
+                <input required="" placeholder="" type="number" class="input" #id_book1>
+                <span>Codigo del libro</span>
+            </label>
 
-              <p>
-                      <input type="text" value="title" #title1>
-              </p>
+            <label>
+                <input required="" placeholder="" type="number" class="input" #id_user1>
+                <span>ID de usuario</span>
+            </label>
 
-              <p>
-                     <input type="text" value="author" #author1> 
-              </p>
-
-              <p>
-                      <input type="text" value="type" #type1>
-              </p>
-
-              <p>
-                      <input type="text" value="price" #price1>
-              </p>
-              
-              <p>
-                      <input type="text" value="id book" #id_book1>
-              </p>
-
-              <p>
-                <input type="text" value="id user" #id_user1>
-              </p>
-
-              <button on-click="anyadirLibro(id_book1.value,id_user1.value,title1.value,type1.value,author1.value,price1.value,imagen1.value)">Añadir</button>
-          </form>
-      </div>
-
-  </div>
-
+        <button on-click="anyadirLibro(id_book1.value,id_user1.value,title1.value,type1.value,author1.value,price1.value,imagen1.value)" class="submit">Añadir</button>
+        
+    </form>
+  
 </div>
+
