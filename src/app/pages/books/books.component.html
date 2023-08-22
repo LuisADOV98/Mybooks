@@ -1,54 +1,17 @@
 <div class="libros">
+<div class="padre1">
+  <div class="input-container">
+    <input type="text" name="text" class="input" placeholder="search...">
+    <span class="icon" > 
+      <svg width="19px" height="19px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path opacity="1" d="M14 5H20" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path opacity="1" d="M14 8H17" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M21 11.5C21 16.75 16.75 21 11.5 21C6.25 21 2 16.75 2 11.5C2 6.25 6.25 2 11.5 2" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path> <path opacity="1" d="M22 22L20 20" stroke="#000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+    </span>
+  </div>
+  </div>
+  <div class="padre2">
          <div class="if" *ngIf="books.length === 0">
           ¡No hay libros!
         </div> 
 <app-card class="app-card" *ngFor="let libro of books; let even = even" [libro]="libro" [even]="even" [books]="books" (bookDeleted)="deleteBook($event)"></app-card>
-  <!-- ------------------------------------------------ -->
-
-  <!-- ------------------------------------------- -->
-   
-  <form class="form">
-        <p class="title">Añade un nuevo libro </p>
-        <p class="message">¡ Asi todos podremos disfrutar de el ! </p>
-            <div class="flex">
-            <label>
-                <input required="" placeholder="" type="text" class="input" #imagen1>
-                <span>Portada</span>
-            </label>
-    
-            <label>
-                <input required="" placeholder="" type="text" class="input" #title1>
-                <span>Titulo</span>
-            </label>
-        </div>  
-                
-        <label>
-            <input required="" placeholder="" type="text" class="input" #author1>
-            <span>Author</span>
-        </label> 
-            
-        <label>
-            <input required="" placeholder="" type="text" class="input" #type1>
-            <span>Tipo de tapa</span>
-        </label>
-        <label>
-            <input required="" placeholder="" type="number" class="input" #price1>
-            <span>Precio</span>
-        </label>
-
-        <label>
-                <input required="" placeholder="" type="number" class="input" #id_book1>
-                <span>Codigo del libro</span>
-            </label>
-
-            <label>
-                <input required="" placeholder="" type="number" class="input" #id_user1>
-                <span>ID de usuario</span>
-            </label>
-
-        <button on-click="anyadirLibro(id_book1.value,id_user1.value,title1.value,type1.value,author1.value,price1.value,imagen1.value)" class="submit">Añadir</button>
-        
-    </form>
-  
+</div>
 </div>
 

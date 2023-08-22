@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { BooksComponent } from '../../pages/books/books.component';
 import { Books } from '../../models/books';
-
+import { BooksService } from '../../shared/books.service';
 
 @Component({
   selector: 'app-card',
@@ -13,9 +13,14 @@ export class CardComponent {
 
  @Input() even: boolean
  @Output() bookDeleted = new EventEmitter<Books>();
+ books: Books[] = []
 
- deleteBook(libro: Books): void {
+ constructor(private bookService: BooksService) {
+  this.books = this.bookService.getAll(); 
+ }
+ deleteBook(){
    this.bookDeleted.emit(this.libro);
  }
+  
 
 }
