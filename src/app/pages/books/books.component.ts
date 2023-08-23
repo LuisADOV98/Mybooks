@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { Books } from 'src/app/models/books';
+
 import { BooksService } from '../../shared/books.service';
+import { Books } from '../../models/books';
 
 @Component({
   selector: 'app-books',
@@ -10,12 +11,16 @@ import { BooksService } from '../../shared/books.service';
 export class BooksComponent {
     public books: Books[];
     
-  constructor(public bookservice2:BooksService,public bookSearch:BooksService){
+  constructor(public bookservice2:BooksService){
    this.books = this.bookservice2.getAll()
   
   }
 
- 
+ buscarlibro(id_book:number){
+  console.log(id_book);
+  
+  this.books = [this.bookservice2.getOne(id_book)]
+ }
 
   deleteBook(bookdelete: Books) {
     this.bookservice2.delete(bookdelete.id_book)

@@ -23,15 +23,12 @@ export class BooksService {
     return this.books;
    }
 
-  //  getOne(id_book: number):book{
-  //   let busqueda = this.books.find(book => book.id_book == id_book)
-  //   if (busqueda !== book.id_book) {
-  //     this.books
-  //   } else{
-  //     this.books.id_book
-  //   }
-  //   return busqueda
-  //  }
+   getOne(id_book: number):Books {
+  
+    let busqueda:Books = this.books.find(book => book.id_book == id_book)
+   
+    return busqueda
+   }
 
    public add(newbook:Books): void{
       
@@ -50,7 +47,17 @@ export class BooksService {
   }
   return bol
   }
-}
+
+edit(bookEd:Books):boolean{
   
+  let index = this.books.findIndex(bookedit => bookedit.id_book == bookEd.id_book);
+  console.log(index);
+   this.books.splice(index,1,bookEd)
+  return index != -1
+  console.log(index);
+  
+  
+  
+}
 
-
+}

@@ -4,41 +4,41 @@
         <p class="message">¡ Asi todos podremos ver los cambios ! </p>
             <div class="flex">
             <label>
-                <input required="" placeholder="" type="text" class="input" #imagen1>
+                <input required="" placeholder="" type="text" class="input" #imagen2>
                 <span>Portada</span>
             </label>
     
             <label>
-                <input required="" placeholder="" type="text" class="input" #title1>
+                <input required="" placeholder="" type="text" class="input" #title2>
                 <span>Titulo</span>
             </label>
         </div>  
                 
         <label>
-            <input required="" placeholder="" type="text" class="input" #author1>
+            <input required="" placeholder="" type="text" class="input" #author2>
             <span>Author</span>
         </label> 
             
         <label>
-            <input required="" placeholder="" type="text" class="input" #type1>
+            <input required="" placeholder="" type="text" class="input" #type2>
             <span>Tipo de tapa</span>
         </label>
         <label>
-            <input required="" placeholder="" type="number" class="input" #price1>
+            <input required="" placeholder="" type="number" class="input" #price2>
             <span>Precio</span>
         </label>
     
         <label>
-                <input required="" placeholder="" type="number" class="input" #id_book1>
+                <input required="" placeholder="" type="number" class="input" #id_book2>
                 <span>Codigo del libro</span>
             </label>
     
             <label>
-                <input required="" placeholder="" type="number" class="input" #id_user1>
+                <input required="" placeholder="" type="number" class="input" #id_user2>
                 <span>ID de usuario</span>
             </label>
     
-        <button class="submit">Editar</button>
+        <button class="submit" on-click="editarlibro(imagen2.value,title2.value,author2.value,type2.value,price2.value,id_book2.value,id_user2.value)">Editar</button>
         
     </form>
 </div>
