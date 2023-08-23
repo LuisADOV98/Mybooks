@@ -7,7 +7,9 @@
     justify-content: space-around;
     align-items: center;
 }
-.hijo1{
+.hijo1 h1{
+    height: 80%;
+    width: 100%;
     border: 5px solid #fafafa10;
    border-radius: 20px;
    backdrop-filter: blur(0.1rem);
@@ -18,14 +20,24 @@
    text-align: center;
    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
+.imagen{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
 .imagen img{
-    height: 500px;
+    height: 80%;
+    width: 25%;
     border: 5px solid #fafafa10;
     border-radius: 20px;
     backdrop-filter: blur(0.1rem);
 
 }
-.hijo2{
+.hijo2 h1{
+    height: 20%;
+    width: 100%;
     text-align: center;
     border: 5px solid #fafafa10;
     border-radius: 20px;

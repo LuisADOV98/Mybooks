@@ -23,7 +23,15 @@ export class BooksService {
     return this.books;
    }
 
- 
+  //  getOne(id_book: number):book{
+  //   let busqueda = this.books.find(book => book.id_book == id_book)
+  //   if (busqueda !== book.id_book) {
+  //     this.books
+  //   } else{
+  //     this.books.id_book
+  //   }
+  //   return busqueda
+  //  }
 
    public add(newbook:Books): void{
       
@@ -31,16 +39,16 @@ export class BooksService {
  }
  
  delete(id_book: number):Boolean {
-  let filtro = this.books.findIndex((book: Books)=> {
-    console.log(book.id_book);
-    book.id_book == id_book
-  })
- 
- 
-  this.books.splice(filtro,2)
-  console.log(filtro);
-  return true
-  
+  let bol: boolean ;
+  let filtro = this.books.findIndex(book=>book.id_book == id_book);
+
+  if (filtro !== -1) {
+  this.books.splice(filtro,1)
+  bol = true
+  }else{
+    bol = false
+  }
+  return bol
   }
 }
   
