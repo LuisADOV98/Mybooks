@@ -16,6 +16,7 @@ export class AddBooksComponent {
   }
   
   public creaLibros(photo,title,author,type,price,id_book,id_user):void{
+   
     let newBook = new Books(id_book,id_user,title,type,author,price,photo);
      this.book = this.miServicioBook.add(newBook)
   }

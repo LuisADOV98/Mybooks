@@ -14,11 +14,12 @@ constructor(public mieditor: BooksService){
 }
   
   editarlibro(photo:string, title:string ,author:string ,type:string ,price:number ,id_book:number, id_user:number):void{
+  
     let bookEd: Books = new Books(id_book,id_user,title,type,author,price,photo)
-    console.log(bookEd);
+    
     
     this.mieditor.edit(bookEd)
-    console.log(bookEd);
+    
     
   }
 }
