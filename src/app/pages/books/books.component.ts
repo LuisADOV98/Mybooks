@@ -1,7 +1,12 @@
 import { Component, Input } from '@angular/core';
+<<<<<<< HEAD
 
 import { BooksService } from '../../shared/books.service';
 import { Books } from '../../models/books';
+=======
+import { Books } from '../../models/books';
+
+>>>>>>> dia4
 
 @Component({
   selector: 'app-books',
