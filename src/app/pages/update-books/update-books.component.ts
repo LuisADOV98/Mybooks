@@ -19,7 +19,11 @@ constructor(public mieditor: BooksService){
     
     
     this.mieditor.edit(bookEd)
-    
+    if (bookEd.id_book) {
+      alert("Se ha editado el libro")
+    } else {
+      alert("no se escuentra el libro que quieres editar")
+    }
     
   }
 }

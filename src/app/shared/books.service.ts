@@ -26,16 +26,14 @@ export class BooksService {
    getOne(id_book: number):Books {
   
     let busqueda:Books = this.books.find(book => book.id_book == id_book)
-    if (!busqueda) {
-      alert("no se escuentra el libro que buscas")
-    }
+  
     return busqueda
    }
 
    public add(newbook:Books): void{
       
     this.books.push(newbook)
-    alert("Se ha añadido un nuevo libro")
+    
  }
  
  delete(id_book: number):Boolean {
@@ -56,11 +54,7 @@ edit(bookEd:Books):boolean{
   let index = this.books.findIndex(bookedit => bookedit.id_book == bookEd.id_book);
   
    this.books.splice(index,1,bookEd)
-   if (bookEd.id_book) {
-    alert("Se ha editado el libro")
-  } else {
-    alert("no se escuentra el libro que quieres editar")
-  }
+   
   return index != -1
 }
 
