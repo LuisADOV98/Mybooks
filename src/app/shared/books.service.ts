@@ -26,9 +26,7 @@ export class BooksService {
    getOne(id_book: number):Books {
   
     let busqueda:Books = this.books.find(book => book.id_book == id_book)
-    if (!busqueda) {
-      alert("no se escuentra el libro que buscas")
-    }
+   
     return busqueda
    }
 

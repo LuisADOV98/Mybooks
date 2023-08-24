@@ -1,12 +1,7 @@
 import { Component, Input } from '@angular/core';
-<<<<<<< HEAD
 
 import { BooksService } from '../../shared/books.service';
 import { Books } from '../../models/books';
-=======
-import { Books } from '../../models/books';
-
->>>>>>> dia4
 
 @Component({
   selector: 'app-books',
@@ -21,11 +16,17 @@ export class BooksComponent {
   
   }
 
- buscarlibro(id_book:number){
-  console.log(id_book);
-  
-  this.books = [this.bookservice2.getOne(id_book)]
- }
+  buscarlibro(id_book:number){
+    if (this.bookservice2.getOne) {
+      this.books = [this.bookservice2.getOne(id_book)]
+    }else{
+      this.bookservice2.getAll()
+    }
+    
+    if (!this.books) {
+      alert("no se escuentra el libro que buscas")
+    }
+   }
 
   deleteBook(bookdelete: Books) {
     this.bookservice2.delete(bookdelete.id_book)
