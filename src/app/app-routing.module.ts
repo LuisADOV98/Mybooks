@@ -10,6 +10,9 @@ import { BooksComponent } from './pages/books/books.component';
 import { CardComponent } from './component/card/card.component';
 import { AddBooksComponent } from './pages/add-books/add-books.component';
 import { UpdateBooksComponent } from './pages/update-books/update-books.component';
+import { LoginComponent } from './pages/login/login.component';
+import { FormsModule } from '@angular/forms';
+import { FormLoginComponent } from './component/form-login/form-login.component';
 
 const routes: Routes = [
   {path: "", redirectTo:"home", pathMatch:'full'},
@@ -22,13 +25,15 @@ const routes: Routes = [
   {path: "books", component: BooksComponent},
   {path: "card", component: CardComponent},
   {path: "addBooks", component: AddBooksComponent},
-  {path: "updateBooks", component: UpdateBooksComponent}
+  {path: "updateBooks", component: UpdateBooksComponent},
+  {path: "login", component: LoginComponent},
+  {path: "form-login", component: FormLoginComponent}
   
   
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule, FormsModule]
 })
 export class AppRoutingModule { }

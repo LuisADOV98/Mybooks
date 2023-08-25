@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './component/header/header.component';
@@ -15,6 +15,10 @@ import { CardComponent } from './component/card/card.component';
 import { AddBooksComponent } from './pages/add-books/add-books.component';
 import { BooksService } from './shared/books.service';
 import { UpdateBooksComponent } from './pages/update-books/update-books.component';
+import { LoginComponent } from './pages/login/login.component';
+import { FormLoginComponent } from './component/form-login/form-login.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations'
 
 
 @NgModule({
@@ -30,12 +34,21 @@ import { UpdateBooksComponent } from './pages/update-books/update-books.componen
     RefPipe,
     CardComponent,
     AddBooksComponent,
-    UpdateBooksComponent
+    UpdateBooksComponent,
+    LoginComponent,
+    FormLoginComponent,
+    
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,ReactiveFormsModule,
+    ToastrModule.forRoot({positionClass: 'toast-top-center',
+    closeButton: true,
+    timeOut: 5000,
+    progressBar: true}),
+    BrowserAnimationsModule
   ],
   providers: [BooksService],
   bootstrap: [AppComponent]

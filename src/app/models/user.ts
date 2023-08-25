@@ -1,3 +1,5 @@
+import { Validators } from "@angular/forms"
+
 export class User {
     public id_user:number
     public name:string
@@ -5,6 +7,8 @@ export class User {
     public email:string
     public photo:string
     public password:string
+    myForm: any
+    formBuilder: any
     
         constructor(id_user:number, name:string, last_name:string,email:string, photo:string, password:string){
             this.id_user = id_user
@@ -18,5 +22,5 @@ export class User {
         public nombreCompleto():string{
             return this.name + " " + this.last_name
         }
-     
+
 }

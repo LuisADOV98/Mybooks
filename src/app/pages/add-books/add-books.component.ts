@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { BooksService } from '../../shared/books.service';
 import { Books } from '../../models/books';
-import { PathLocationStrategy } from '@angular/common';
+
 
 @Component({
   selector: 'app-add-books',
@@ -24,10 +24,3 @@ export class AddBooksComponent {
 
   
 }
-
-
-
-
-
-
-//  new Books(this.book.id_book,this.book.id_user,this.book.title,this.book.type,this.book.author,this.book.price,this.book.photo)

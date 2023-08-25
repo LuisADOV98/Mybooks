@@ -1,0 +1,8 @@
+.padre{
+    height: 120vh;
+    background-image: url(../../../assets/imagenes/fondoform1.webp);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+}
