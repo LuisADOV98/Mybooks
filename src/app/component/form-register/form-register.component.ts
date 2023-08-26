@@ -14,6 +14,11 @@ constructor(private formBuilder: FormBuilder){
   this.buildForm();
 }
 
+  public recogerInfo(){
+    
+  }
+
+
   public register(){
     const user = this.myForm.value
     console.log(user);
