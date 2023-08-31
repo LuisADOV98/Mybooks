@@ -1,26 +1,26 @@
 
-    <div class="book">
-        <div class="card"> 
-            <div class="info">
-            <div class="card-title">{{libro.title}}</div>
-    <div class="card-subtitle">{{libro.author}}</div> <br>
+    <div class="book-30">
+        <div class="card-30"> 
+            <div class="info-30">
+            <div class="card-40">{{libro.title}}</div>
+    <div class="card-50">{{libro.author}}</div> 
         <p class="type">{{libro.type}} </p>
         <p class="ref" [ngClass]="even ? 'color1' : 'color2' ">{{libro | ref}}</p>
-        <br>
-        <div class="card-price"><span>€</span>{{libro.price}}</div>
+        
+        <div class="card-price-30"><span>€</span>{{libro.price}}</div>
         
         </div>
 
         <div class="botones">
 
-<button class="tooltip" on-click="deleteBook()">
+<button class="tooltip-30" on-click="deleteBook()">
             
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="24" height="24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"></path>
           </svg>
           </button>
 
-          <button class="button">
+          <button class="button-30">
             <svg viewBox="0 0 16 16" class="bi bi-cart-check" height="24" width="24" xmlns="http://www.w3.org/2000/svg" fill="#000">
              <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"></path>
              <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path>

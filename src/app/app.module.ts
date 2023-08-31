@@ -19,6 +19,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { FormLoginComponent } from './component/form-login/form-login.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations'
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { BrowserAnimationsModule} from '@angular/platform-browser/animations'
     closeButton: true,
     timeOut: 5000,
     progressBar: true}),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [BooksService],
   bootstrap: [AppComponent]
