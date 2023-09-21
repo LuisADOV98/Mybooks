@@ -8,5 +8,7 @@ export class Response {
         public message:string,
         public data?:Books[],
         public data_book?: Books,
+        public dataUser?:User,
+        public dataU?:User[]
         ){}
 }

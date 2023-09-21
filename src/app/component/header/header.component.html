@@ -3,11 +3,11 @@
 
 <nav class="barra">
     <h1 class="menu">My Books</h1>
-    <a routerLink="home" class="b" style="text-decoration: none;">HOME</a>
-    <a routerLink="register" class="n" style="text-decoration: none;">REGISTER</a>
-    <a routerLink="profile" class="b" style="text-decoration: none;">PROFILE</a>
-    <a routerLink="books" class="n" style="text-decoration: none;">BOOKS</a>
-    <a routerLink="addBooks" class="b" style="text-decoration: none;">ADDBOOKS</a>
-    <a routerLink="updateBooks" class="n" style="text-decoration: none;">UPDATEBOOKS</a>
-    <a routerLink="login" class="b" style="text-decoration: none;">LOGIN</a>
+    <a *ngIf="!yaLogueado" routerLink="home" class="b" style="text-decoration: none;">HOME</a>
+    <a *ngIf="!yaLogueado" routerLink="register" class="n" style="text-decoration: none;">REGISTER</a>
+    <a *ngIf="yaLogueado" routerLink="profile" class="b" style="text-decoration: none;">PROFILE</a>
+    <a *ngIf="yaLogueado" routerLink="books" class="n" style="text-decoration: none;">BOOKS</a>
+    <a *ngIf="yaLogueado" routerLink="addBooks" class="b" style="text-decoration: none;">ADDBOOKS</a>
+    <a *ngIf="yaLogueado" routerLink="updateBooks" class="n" style="text-decoration: none;">UPDATEBOOKS</a>
+    <a *ngIf="!yaLogueado" routerLink="login" class="b" style="text-decoration: none;">LOGIN</a>
 </nav>

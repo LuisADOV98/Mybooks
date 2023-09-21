@@ -6,34 +6,37 @@ import { Observable } from 'rxjs/internal/Observable';
   providedIn: 'root'
 })
 export class BooksService {
-  
+  public book: Books
   public books: Books[]
-  private url = "http://localhost:4000"
+  private url = "http://localhost:3000"
 
 
   constructor(private http: HttpClient) {
 
   }
 
-   getAll():Observable<Object> {
-    return this.http.get(this.url + "/book")
+   getAll(id_user):Observable<Object> {
+   
+    return this.http.get(`${this.url}/books?id_user=${id_user}`)
    }
 
-   getOne(id_book:number):Observable<Object>{
-    return this.http.get(`${this.url}/book2?id_book=${id_book}`);
+   getOne(id_user:number, id_book:number):Observable<Object>{
+    return this.http.get(`${this.url}/books?id_user=${id_user}&id_book=${id_book}`);
+   
+    
   }
 
   add(newBook:Books):Observable<Object>{
-    return this.http.post(this.url+"/book", newBook);
+    return this.http.post(this.url+"/books", newBook);
   }
 
   delete(id_book:number):Observable<Object>{
-    return this.http.request('delete', this.url + "/book", {body:{id_book:id_book}});
+    return this.http.request('delete', this.url + "/books", {body:{id_book:id_book}});
   }
 
 
   edit(editBook:Books):Observable<Object>{
-    return this.http.put(this.url + "/book",editBook);
+    return this.http.put(this.url + "/books",editBook);
   }
 
 }

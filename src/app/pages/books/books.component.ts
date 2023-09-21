@@ -3,6 +3,7 @@ import { Response } from 'src/app/models/response';
 import { BooksService } from '../../shared/books.service';
 import { Books } from '../../models/books';
 import { UserService } from 'src/app/shared/user.service';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-books',
@@ -10,13 +11,17 @@ import { UserService } from 'src/app/shared/user.service';
   styleUrls: ['./books.component.css']
 })
 export class BooksComponent {
-    public books: Books[];
-    
-  constructor(public bookservice:BooksService){
-    this.bookservice.getAll().subscribe((data:Response)=>{
-      console.log(data);
+    public books: Books[] = [];
+    public book:Books
+  public user:User
+  constructor(public bookservice:BooksService, public userService: UserService){
+
+    this.bookservice.getAll(this.userService.user.id_user).subscribe((data:Response)=>{
+      
       
       this.books = data.data;
+      console.log(data);
+      
       })
   
   }
@@ -37,16 +42,14 @@ export class BooksComponent {
 
 
   buscarlibro(id_book:number){
-    
-    if (id_book) {
-  this.bookservice.getOne(id_book).subscribe((data:Response)=>{
-    this.books = [data.data_book];
-    
-  })
-    }else{
-      this.bookservice.getAll().subscribe((data:Response)=>{
-        this.books = data.data;
+    if (!id_book) {
+      this.bookservice.getAll(this.userService.user.id_user).subscribe((data:Response) =>{
+        this.books = data.data
+      })
+    } else {
+      this.bookservice.getOne(this.userService.user.id_user,id_book).subscribe((data:Response)=>{
+      this.books = data.data
       })
     }
-
-}}
+  }
+}

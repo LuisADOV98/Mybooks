@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, AbstractControl  } from "@angular/forms";
+import { UserService } from 'src/app/shared/user.service';
+import { Response } from 'src/app/models/response';
+import { User } from 'src/app/models/user';
 @Component({
   selector: 'app-form-register',
   templateUrl: './form-register.component.html',
@@ -7,21 +10,33 @@ import { FormGroup, FormBuilder, Validators, AbstractControl  } from "@angular/f
 })
 export class FormRegisterComponent {
 public myForm: FormGroup
+public myUser: User
 
 
-
-constructor(private formBuilder: FormBuilder){
+constructor(private formBuilder: FormBuilder, private userService:UserService){
   this.buildForm();
 }
 
-  public recogerInfo(){
-    
-  }
-
 
   public register(){
-    const user = this.myForm.value
-    console.log(user);
+   this.myUser = this.myForm.value
+   let newUser = new User(this.myUser.name,this.myUser.last_name,this.myUser.email,this.myUser.photo,this.myUser.password)
+
+  this.userService.register(newUser).subscribe((data:Response) =>
+    { 
+      if (!data.error)
+      {
+        this.myUser = data.dataUser
+        alert("Te has registrado");
+        console.log("ingresado" + this.myUser);
+        
+      }
+      else
+      alert("Algo ha salido mal");
+      console.log(this.myUser);
+      
+    })
+
     
   }
   private buildForm(){

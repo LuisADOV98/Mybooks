@@ -3,27 +3,24 @@
 <div class="padre">
     <div class="hijo1">
         <div class="image"><img src="{{miUser.photo}}" alt=""></div>
-        <div class="nombreC"><h1>{{miUser.nombreCompleto()}}</h1></div>
+        <!-- <div class="nombreC"><h1>{{miUser.nombreCompleto()}}</h1></div> -->
         <div class="formulario">
             
             <form action="submeter-formulario.php" method="post">
-                <p>
-                    <label for="nombre" class="colocar_nombre">Nombre
-                    </label>
+          
+                  
                     <input type="text" [value]="miUser.name">
-                </p>
+               
 
-                <p>
-                    <label for="apellido" class="colocar_apellido">Apellido
-                    </label>
+                
+                 
                         <input type="text" [value]="miUser.last_name">
-                </p>
+            
 
-                <p>
-                    <label for="Email" class="colocar_Email">Correo:   
-                    </label>
+            
+                   
                         <input type="origen" [value]="miUser.email">
-                </p>
+                
 
             </form>
         </div>

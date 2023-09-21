@@ -7,10 +7,10 @@ export class Books {
     public price: number;
     public photo: string;
 
-    constructor(id_book:number=0,id_user:number=0,title:string,type:string,author:string,price:number,photo:string){
+    constructor(title:string,type:string,author:string,price:number,photo:string, id_book?:number,id_user?:number){
 
-        this.id_book = id_book
-        this.id_user = id_user
+        this.id_book = id_book;
+        this.id_user = id_user;
         this.title = title;
         this.type = type;
         this.author = author;

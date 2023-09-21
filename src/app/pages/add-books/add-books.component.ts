@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { BooksService } from '../../shared/books.service';
 import { Books } from '../../models/books';
 import { Response } from 'src/app/models/response';
+import { UserService } from 'src/app/shared/user.service';
 
 
 @Component({
@@ -12,17 +13,21 @@ import { Response } from 'src/app/models/response';
 export class AddBooksComponent {
   public books: Books[]
   public book: void
-  constructor(private miServicioBook:BooksService)
+  constructor(private miServicioBook:BooksService, private userService: UserService)
   {
   
   }
   
 
 
-  public addBook(photo:string,title:string,author:string,type:string,price:number,id_book:number,id_user:number):void{
-    let newBook: Books = new Books(id_book,id_user,title,type,author,price,photo)
+  public addBook(photo:string,title:string,author:string,type:string,price:number):void{
+    let newBook: Books = new Books(title,type,author,price,photo,0,this.userService.user.id_user)
+    console.log(newBook);
+    console.log(this.userService.user);
+    
     this.miServicioBook.add(newBook).subscribe((data:Response)=>{
-      
+      this.books = data.data
+
       if (!data.error)
       {
         alert("Has añadido un nuevo libro");
@@ -32,7 +37,6 @@ export class AddBooksComponent {
       alert("No hay donde agregarlo");
 
      })
-     console.log(this.books);
   }
 
 }

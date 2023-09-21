@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { User } from 'src/app/models/user';
-
+import { UserService } from 'src/app/shared/user.service';
+import { Response } from 'src/app/models/response';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -9,17 +10,41 @@ import { User } from 'src/app/models/user';
 export class ProfileComponent {
   public miUser: User
 
-    constructor(){
-      this.miUser = new User(2552, "luis", "de oliveira", "luis123@gmail.com", "https://th.bing.com/th?id=OIF.MOm6nxSl%2bDx7iaju4hzeeQ&pid=ImgDet&rs=1", "12345678")
+    constructor(public userService:UserService){
+      this.miUser = this.userService.user
     }
 
-    public cambiarDatos(newName:HTMLInputElement, newLastName:HTMLInputElement, newEmail:HTMLInputElement,newPhoto:HTMLInputElement){
-      console.log(this.miUser.name);
+    public cambiarDatos(name:HTMLInputElement, lat_name:HTMLInputElement, email:HTMLInputElement,photo:HTMLInputElement){
+   
+     
+      this.miUser.name = name.value;
+      this.miUser.last_name = lat_name.value;
+      this.miUser.email = email.value;
+      this.miUser.photo = photo.value
+      let editUser: User = new User(this.miUser.name,this.miUser.last_name,this.miUser.email,this.miUser.photo,this.miUser.password,this.miUser.id_user)
+      if (this.miUser.photo === "") {
+        editUser.photo = null
+      } 
+      if (this.miUser.name === ""){
+        editUser.name = null
+      }
+      if (this.miUser.last_name === "") {
+        editUser.last_name = null
+      }
+      if (this.miUser.email === "") {
+        editUser.email = null
+      }
       
-      this.miUser.name = newName.value;
-      this.miUser.last_name = newLastName.value;
-      this.miUser.email = newEmail.value;
-      this.miUser.photo = newPhoto.value
+      
+      this.userService.editProfile(editUser).subscribe((data:Response) => {
+        if (!data.error)
+        {
+          alert("Has editado tu perfil");
+          
+        } 
+        else
+        alert("Algo ha salido mal");
+      })
   }
     }
 
